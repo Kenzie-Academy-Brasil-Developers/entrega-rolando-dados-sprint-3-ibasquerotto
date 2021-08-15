@@ -95,7 +95,7 @@ for (let i = 0; i < result.length; i++){
 
     let larguraBarra = result[i]
 
-    const resultadosList = document.createElement("div")
+    let resultadosList = document.createElement("div")    
     resultadosList.innerHTML = resultados
     resultadosList.style.width = `${larguraBarra}px`
     resultadosList.style.backgroundColor = `#ddd`
@@ -103,18 +103,24 @@ for (let i = 0; i < result.length; i++){
     
     resultadoList.appendChild(resultadosList)
 
-   
+    
    
    
 }
 
+
 }
 
+function reset(){
+    resultadoList.innerHTML = ""
+
+}
 
 const buttonrollDice = document.getElementById("rollDice")
 
 buttonrollDice.addEventListener("click", function(){
-    
+    reset()
+    result = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
     rolarDados(1000)
     
 })
